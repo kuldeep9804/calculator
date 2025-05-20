@@ -13,6 +13,7 @@
             background: #f0f0f0;
             margin: 0;
             font-family: Arial, sans-serif;
+            user-select: none; 
         }
         .calculator {
             background: #333;
@@ -72,7 +73,7 @@
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
     <div class="calculator">
         <div class="display" id="display">0</div>
         <div class="buttons">
@@ -125,6 +126,9 @@
                 setTimeout(clearDisplay, 1000);
             }
         }
+
+        document.addEventListener('copy', (e) => e.preventDefault());
+        document.addEventListener('cut', (e) => e.preventDefault());
     </script>
 </body>
 </html>
